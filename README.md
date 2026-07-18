@@ -98,6 +98,7 @@ flowchart LR
 ai-consultant-agent-with-memory/
 ├── app.py                    # Streamlit interface (assessment + memory room)
 ├── workflow.py               # Research, consulting, and Memori workflow
+├── Dockerfile                # Portable production container
 ├── pyproject.toml            # uv project metadata and dependencies
 ├── uv.lock                   # Reproducible dependency lockfile
 ├── requirements.txt          # Familiar pip/hosting dependency list
@@ -204,6 +205,13 @@ The repository is platform-neutral. A typical start command is:
 
 ```bash
 streamlit run app.py --server.address 0.0.0.0 --server.port $PORT
+```
+
+Or build the included production container:
+
+```bash
+docker build -t northstar-ai-advisor .
+docker run --rm -p 8501:8501 --env-file .env northstar-ai-advisor
 ```
 
 For production or multi-instance hosting, replace SQLite with a managed Memori-supported database. Local files on many app hosts are ephemeral and are not appropriate as a durable multi-tenant store.

@@ -1,0 +1,13 @@
+.git
+.github
+.venv
+.tmp
+__pycache__
+.pytest_cache
+.ruff_cache
+.env
+.streamlit/secrets.toml
+memori.sqlite*
+tests
+site
+
