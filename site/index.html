@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Northstar turns company context into a practical AI readiness decision, use-case portfolio, cost bands, and a 90-day plan." />
+  <meta name="theme-color" content="#17141f" />
+  <title>Northstar — AI Readiness Advisor</title>
+  <style>
+    :root{--ink:#17141f;--muted:#706b7c;--paper:#fff;--canvas:#f7f7fb;--violet:#6c5ce7;--lime:#b9ff66;--line:#e6e3ec}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--canvas);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}
+    .nav{height:74px;display:flex;align-items:center;justify-content:space-between;max-width:1180px;margin:auto;padding:0 24px}.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.03em}.logo{width:40px;height:40px;border-radius:12px;background:var(--ink);position:relative}.logo:before,.logo:after{content:"";position:absolute;transform:rotate(45deg)}.logo:before{width:14px;height:14px;border-radius:2px;background:var(--violet);right:7px;top:8px}.logo:after{width:10px;height:10px;border-radius:2px;background:var(--lime);left:8px;bottom:8px}.nav-links{display:flex;align-items:center;gap:22px}.nav a{color:var(--muted);font-size:.85rem;font-weight:700;text-decoration:none}.nav .cta{background:var(--ink);color:white;padding:10px 14px;border-radius:10px}
+    .hero{max-width:1180px;margin:0 auto;padding:76px 24px 66px}.eyebrow{color:var(--violet);font-size:.74rem;font-weight:850;letter-spacing:.15em;text-transform:uppercase}.hero h1{font-size:clamp(3.3rem,8vw,7.2rem);line-height:.88;letter-spacing:-.075em;max-width:1050px;margin:23px 0 28px}.hero h1 span{color:var(--violet)}.hero-copy{display:flex;justify-content:space-between;gap:30px;align-items:end}.hero p{color:var(--muted);font-size:1.08rem;line-height:1.7;max-width:650px;margin:0}.hero-badges{display:flex;flex-wrap:wrap;justify-content:end;gap:7px}.badge{border:1px solid var(--line);background:white;border-radius:999px;padding:8px 11px;font-size:.72rem;font-weight:750}.badge.dark{background:var(--ink);color:white;border-color:var(--ink)}
+    .marquee{background:var(--ink);color:white;overflow:hidden;white-space:nowrap;padding:15px 0;font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.marquee div{display:inline-block;animation:slide 24s linear infinite}.marquee span{color:var(--lime);margin:0 18px}@keyframes slide{to{transform:translateX(-50%)}}
+    .section{max-width:1180px;margin:auto;padding:86px 24px}.section-head{display:grid;grid-template-columns:.6fr 1.4fr;gap:30px;margin-bottom:34px}.kicker{color:var(--violet);font-size:.72rem;font-weight:850;letter-spacing:.13em;text-transform:uppercase}.section h2{font-size:clamp(2.25rem,5vw,4.3rem);letter-spacing:-.06em;line-height:.98;margin:0}.section-intro{color:var(--muted);line-height:1.65;max-width:680px;margin:18px 0 0}
+    .product{background:white;border:1px solid var(--line);border-radius:28px;box-shadow:0 20px 80px #332d4910;overflow:hidden}.product-top{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line)}.product-title{font-size:.78rem;font-weight:800}.mode{background:#f0edff;color:#5c4cc0;border-radius:999px;padding:7px 10px;font-size:.68rem;font-weight:800}.product-body{display:grid;grid-template-columns:300px 1fr;min-height:680px}.sidebar{background:var(--ink);color:white;padding:25px}.sidebar h3{font-size:1.05rem;margin:0 0 8px}.sidebar p{color:#9d97a8;line-height:1.5;font-size:.78rem;margin:0 0 24px}.status{background:#24202e;border:1px solid #373141;border-radius:12px;padding:12px;margin:8px 0;display:flex;align-items:center;justify-content:space-between;font-size:.76rem;font-weight:700}.dot{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 3px #b9ff6620}.privacy{font-size:.67rem!important;margin-top:22px!important}.workspace{background:#24202e;border:1px solid #373141;color:white;width:100%;padding:12px;border-radius:10px;margin:8px 0 20px;outline:none}.workspace:focus{border-color:#7767de}
+    .workspace-main{padding:28px;background:#fbfafd}.steps{display:flex;gap:8px;margin-bottom:25px}.step{font-size:.7rem;font-weight:800;color:#8d8798;background:#eeecf2;padding:8px 10px;border-radius:8px}.step.active{background:var(--ink);color:white}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:.72rem;font-weight:800;color:#5f5969}.field input,.field select,.field textarea{width:100%;border:1px solid #ddd9e4;background:white;border-radius:10px;padding:11px 12px;color:var(--ink);outline:none}.field textarea{min-height:86px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--violet);box-shadow:0 0 0 3px #6c5ce713}.submit{width:100%;border:0;background:var(--ink);color:white;border-radius:11px;padding:13px 16px;font-weight:800;margin-top:18px;cursor:pointer}.submit:hover{background:#2b2633}.fine{color:#8d8798;font-size:.68rem;line-height:1.5;margin:10px 0 0}.error{color:#9f2d2d;background:#fff0f0;border:1px solid #ffd1d1;border-radius:9px;padding:9px 11px;font-size:.75rem;margin-top:10px;display:none}
+    .result{display:none}.result.show{display:block}.result-hero{background:var(--ink);border-radius:20px;color:white;padding:25px;display:grid;grid-template-columns:120px 1fr;align-items:center;gap:22px}.ring{width:108px;height:108px;border-radius:50%;display:grid;place-items:center;position:relative}.ring:after{content:"";position:absolute;inset:8px;background:var(--ink);border-radius:50%}.ring strong{position:relative;z-index:1;font-size:2rem;letter-spacing:-.05em}.decision{color:var(--lime);font-size:.68rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase}.result h3{font-size:1.35rem;letter-spacing:-.035em;margin:7px 0}.result-hero p{color:#bdb8c5;font-size:.78rem;line-height:1.5;margin:0}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:13px 0}.metric{background:white;border:1px solid var(--line);border-radius:12px;padding:12px}.metric span{font-size:.62rem;color:#8c8596;font-weight:800;text-transform:uppercase}.metric strong{display:block;font-size:1.4rem;margin-top:4px}.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.case{background:white;border:1px solid var(--line);border-radius:13px;padding:14px}.rank{width:25px;height:25px;display:grid;place-items:center;background:var(--ink);color:var(--lime);border-radius:7px;font-size:.67rem;font-weight:800}.case h4{font-size:.86rem;margin:11px 0 7px}.case p{color:var(--muted);font-size:.68rem;line-height:1.45}.tag{display:inline-block;background:#efedf3;border-radius:6px;padding:4px 6px;font-size:.58rem;font-weight:750;margin:2px}.result-actions{display:flex;gap:8px;margin-top:13px}.secondary{background:white;border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-size:.7rem;font-weight:800;cursor:pointer}.saved{font-size:.68rem;color:#5b7e2f;align-self:center;display:none}
+    .capabilities{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.cap{background:white;border:1px solid var(--line);border-radius:18px;padding:22px}.cap .num{font-size:.7rem;color:var(--violet);font-weight:850}.cap h3{font-size:1.1rem;margin:36px 0 9px}.cap p{font-size:.81rem;line-height:1.55;color:var(--muted)}
+    .memory{background:var(--ink);color:white;border-radius:28px;padding:46px;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.memory h2{color:white}.memory p{color:#aaa4b3;line-height:1.65}.memory-card{background:#24202e;border:1px solid #383241;border-radius:16px;padding:16px;margin:9px 0}.memory-card small{color:#8e8798}.memory-card strong{display:block;margin:5px 0}.memory-empty{color:#8e8798;font-size:.8rem}.memory-list{max-height:310px;overflow:auto}
+    footer{max-width:1180px;margin:30px auto 0;padding:34px 24px 45px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--muted);font-size:.76rem}footer a{color:var(--ink);font-weight:800;text-decoration:none}
+    @media(max-width:800px){.nav-links a:not(.cta){display:none}.hero{padding-top:45px}.hero-copy,.section-head{display:block}.hero-badges{justify-content:start;margin-top:24px}.product-body{grid-template-columns:1fr}.sidebar{display:none}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.capabilities{grid-template-columns:1fr 1fr}.memory{grid-template-columns:1fr;padding:28px}.result-hero{grid-template-columns:1fr}.metrics{grid-template-columns:1fr 1fr}.cases{grid-template-columns:1fr}.section{padding:62px 18px}.nav,.hero{padding-left:18px;padding-right:18px}}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand"><span class="logo"></span>Northstar <span style="color:#aaa4b3;font-weight:500">/ AI advisory</span></div>
+    <div class="nav-links"><a href="#experience">Experience</a><a href="#memory">Memory</a><a href="https://github.com/tirth1263/ai-consultant-agent-with-memory">Source</a><a class="cta" href="#experience">Run assessment</a></div>
+  </nav>
+
+  <header class="hero">
+    <div class="eyebrow">AI decisions with evidence and memory</div>
+    <h1>Move from AI ambition to an <span>executable portfolio.</span></h1>
+    <div class="hero-copy">
+      <p>Northstar assesses readiness, narrows the opportunity landscape, estimates cost and complexity, and keeps the engagement context alive for every follow-up.</p>
+      <div class="hero-badges"><span class="badge dark">Memori v3</span><span class="badge">OpenAI</span><span class="badge">Tavily</span><span class="badge">Streamlit</span></div>
+    </div>
+  </header>
+
+  <div class="marquee"><div>Readiness decision <span>✦</span> Priority use cases <span>✦</span> Cost bands <span>✦</span> Case-study evidence <span>✦</span> 90-day roadmap <span>✦</span> Long-term memory <span>✦</span> Readiness decision <span>✦</span> Priority use cases <span>✦</span> Cost bands <span>✦</span> Case-study evidence <span>✦</span> 90-day roadmap <span>✦</span> Long-term memory <span>✦</span></div></div>
+
+  <main>
+    <section class="section" id="experience">
+      <div class="section-head"><div class="kicker">Interactive product preview</div><div><h2>A decision brief, not another AI brainstorm.</h2><p class="section-intro">Complete the profile below to experience the no-key preview. The full Streamlit app adds live OpenAI reasoning, Tavily research, and Memori-managed semantic recall.</p></div></div>
+      <div class="product">
+        <div class="product-top"><span class="product-title">NORTHSTAR / ADVISORY WORKSPACE</span><span class="mode">SAFE PREVIEW MODE</span></div>
+        <div class="product-body">
+          <aside class="sidebar">
+            <h3>Engagement workspace</h3><p>Use the same workspace key to keep assessments together in this browser.</p>
+            <input class="workspace" id="workspace" value="strategy-team" aria-label="Workspace key" />
+            <div class="status">OpenAI reasoning <span class="dot"></span></div>
+            <div class="status">Tavily research <span class="dot"></span></div>
+            <div class="status">Memori v3 design <span class="dot"></span></div>
+            <p class="privacy">This hosted preview makes no API calls and stores only preview summaries in your browser. Run the Streamlit app for live services.</p>
+          </aside>
+          <div class="workspace-main">
+            <div id="formView">
+              <div class="steps"><span class="step active">01 Profile</span><span class="step">02 Readiness</span><span class="step">03 Portfolio</span></div>
+              <form id="assessmentForm">
+                <div class="form-grid">
+                  <div class="field"><label for="company">Company name</label><input id="company" placeholder="e.g. Acme Manufacturing" required /></div>
+                  <div class="field"><label for="industry">Industry</label><select id="industry"><option>Technology</option><option>Financial services</option><option>Healthcare</option><option>Retail & e-commerce</option><option>Manufacturing</option><option>Professional services</option><option>Public sector</option></select></div>
+                  <div class="field"><label for="size">Company size</label><select id="size"><option>1–50 employees</option><option>51–200 employees</option><option selected>201–1,000 employees</option><option>1,001–5,000 employees</option><option>5,000+ employees</option></select></div>
+                  <div class="field"><label for="data">Data maturity</label><select id="data"><option>Early</option><option selected>Developing</option><option>Established</option><option>Advanced</option></select></div>
+                  <div class="field"><label for="ai">AI experience</label><select id="ai"><option>None yet</option><option selected>Experiments</option><option>One live use case</option><option>Scaled program</option></select></div>
+                  <div class="field"><label for="budget">Pilot budget</label><select id="budget"><option>Under $50k</option><option selected>$50k–$100k</option><option>$100k–$250k</option><option>$250k+</option></select></div>
+                  <div class="field full"><label for="goals">Top business goals</label><textarea id="goals" placeholder="What measurable outcomes should AI improve over the next 12 months?" required></textarea></div>
+                  <div class="field full"><label for="constraints">Constraints and non-negotiables</label><textarea id="constraints" placeholder="Regulation, security, capacity, integrations, change fatigue…"></textarea></div>
+                </div>
+                <button class="submit" type="submit">Build my AI readiness brief →</button>
+                <div class="error" id="error">Add a company name and business goal to continue.</div>
+                <p class="fine">Preview outputs are deterministic examples, not live consulting or researched claims. Cost bands are directional.</p>
+              </form>
+            </div>
+
+            <div class="result" id="resultView">
+              <div class="steps"><span class="step">01 Profile</span><span class="step active">02 Decision brief</span><span class="step">03 Memory</span></div>
+              <div class="result-hero">
+                <div class="ring" id="ring"><strong id="score">—</strong></div>
+                <div><div class="decision" id="decision"></div><h3 id="headline"></h3><p id="summary"></p></div>
+              </div>
+              <div class="metrics" id="metrics"></div>
+              <div class="cases" id="cases"></div>
+              <div class="result-actions"><button class="secondary" id="reset" type="button">← New profile</button><button class="secondary" id="download" type="button">Download JSON</button><span class="saved" id="saved">✓ Saved to this workspace</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><div class="kicker">One focused system</div><div><h2>Four jobs. One continuous engagement.</h2></div></div>
+      <div class="capabilities">
+        <article class="cap"><div class="num">01 / ASSESS</div><h3>Read the foundation</h3><p>Score strategy, data, technology, and people against the outcomes that matter.</p></article>
+        <article class="cap"><div class="num">02 / PRIORITIZE</div><h3>Narrow the portfolio</h3><p>Choose three initiatives with explicit impact, complexity, economics, and KPIs.</p></article>
+        <article class="cap"><div class="num">03 / RESEARCH</div><h3>Ground the advice</h3><p>Bring relevant Tavily evidence into the decision and preserve source provenance.</p></article>
+        <article class="cap"><div class="num">04 / REMEMBER</div><h3>Carry context forward</h3><p>Let Memori capture earlier decisions so follow-up questions start where the work left off.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="memory">
+      <div class="memory">
+        <div><div class="kicker" style="color:var(--lime)">Persistent engagement context</div><h2>Good advice compounds when the agent remembers.</h2><p>Use one workspace key across assessments. In the production Streamlit experience, Memori v3 attributes model interactions to a hashed entity identity and recalls relevant decisions during follow-ups.</p><a class="cta" style="display:inline-block;color:var(--ink);background:var(--lime);padding:11px 14px;border-radius:10px;text-decoration:none;font-size:.78rem;font-weight:850" href="https://github.com/tirth1263/ai-consultant-agent-with-memory">Explore the implementation ↗</a></div>
+        <div><div class="memory-list" id="memoryList"><div class="memory-empty">Run the preview assessment to create your first local engagement memory.</div></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>Northstar · AI Consultant Agent with Memory</span><span>Built by <a href="https://github.com/tirth1263">Tirth Rank</a> · <a href="https://github.com/tirth1263/ai-consultant-agent-with-memory">GitHub</a></span></footer>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const dataScores = {Early:32, Developing:52, Established:72, Advanced:88};
+    const aiScores = {'None yet':28, Experiments:48, 'One live use case':67, 'Scaled program':86};
+    let latest = null;
+
+    function safeText(value){ return String(value || ''); }
+    function workspaceKey(){ return `northstar:${$('workspace').value.trim().toLowerCase() || 'strategy-team'}`; }
+    function history(){ try{return JSON.parse(localStorage.getItem(workspaceKey()) || '[]')}catch{return []} }
+    function drawMemory(){
+      const items = history();
+      if(!items.length){$('memoryList').innerHTML='<div class="memory-empty">Run the preview assessment to create your first local engagement memory.</div>';return}
+      $('memoryList').innerHTML=items.slice(0,5).map(item=>`<div class="memory-card"><small>${safeText(item.date)} · PREVIEW</small><strong>${safeText(item.company)}</strong><small>${safeText(item.score)}/100 · ${safeText(item.decision)}</small></div>`).join('');
+    }
+
+    $('workspace').addEventListener('input', drawMemory);
+    $('assessmentForm').addEventListener('submit', (event)=>{
+      event.preventDefault();
+      const company=$('company').value.trim(), goals=$('goals').value.trim();
+      if(!company || !goals){$('error').style.display='block';return}
+      $('error').style.display='none';
+      const strategy=goals.length>45?72:55, data=dataScores[$('data').value], technology=aiScores[$('ai').value], people=66;
+      const score=Math.round(strategy*.30+data*.30+technology*.25+people*.15);
+      const decision=score>=68?'Adopt AI now':score>=48?'Explore selectively':'Build foundations first';
+      const headline=score>=68?'Move from ideas to a controlled pilot.':score>=48?'Start narrow and strengthen the foundation in parallel.':'Earn the right to automate with a foundation sprint.';
+      const cases=[
+        {title:'Knowledge copilot',desc:'Ground frontline answers in approved internal guidance.',cost:'$35k–$90k',impact:'High impact'},
+        {title:'Workflow triage assistant',desc:'Classify work and prepare a draft while people own decisions.',cost:'$50k–$140k',impact:'High impact'},
+        {title:'Management insight brief',desc:'Turn operating data into a traceable weekly exception report.',cost:'$20k–$60k',impact:'Medium impact'}
+      ];
+      latest={company,industry:$('industry').value,score,decision,headline,dimensions:{strategy,data,technology,people},use_cases:cases,mode:'preview'};
+      $('score').textContent=score;
+      $('ring').style.background=`conic-gradient(var(--lime) ${score}%,#34303d 0)`;
+      $('decision').textContent=decision;
+      $('headline').textContent=headline;
+      $('summary').textContent=`${company} has a practical near-term opportunity where repeatable work and decision support intersect. This transparent preview uses profile signals only; the Streamlit application adds live reasoning, research, and semantic memory.`;
+      $('metrics').innerHTML=Object.entries(latest.dimensions).map(([name,value])=>`<div class="metric"><span>${safeText(name)}</span><strong>${value}</strong></div>`).join('');
+      $('cases').innerHTML=cases.map((c,i)=>`<article class="case"><div class="rank">0${i+1}</div><h4>${safeText(c.title)}</h4><p>${safeText(c.desc)}</p><span class="tag">${safeText(c.impact)}</span><span class="tag">${safeText(c.cost)}</span></article>`).join('');
+      $('formView').style.display='none';$('resultView').classList.add('show');
+      const items=history();items.unshift({company,score,decision,date:new Date().toISOString().slice(0,10)});localStorage.setItem(workspaceKey(),JSON.stringify(items.slice(0,12)));
+      $('saved').style.display='inline';drawMemory();
+    });
+    $('reset').addEventListener('click',()=>{$('resultView').classList.remove('show');$('formView').style.display='block';$('saved').style.display='none'});
+    $('download').addEventListener('click',()=>{if(!latest)return;const blob=new Blob([JSON.stringify(latest,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`${latest.company.toLowerCase().replace(/[^a-z0-9]+/g,'-')}-ai-readiness.json`;a.click();URL.revokeObjectURL(url)});
+    drawMemory();
+  </script>
+</body>
+</html>

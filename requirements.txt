@@ -1,0 +1,9 @@
+# Kept for familiar pip-based deployment and the project structure shown in the brief.
+# `uv sync` uses pyproject.toml/uv.lock; Streamlit Community Cloud can also install this file.
+memori[sqlalchemy]>=3.3.6,<4
+openai>=2.6,<3
+python-dotenv>=1.1,<2
+sqlalchemy>=2.0.44,<3
+streamlit>=1.47,<2
+tavily-python>=0.7,<1
+

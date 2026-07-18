@@ -1,0 +1,36 @@
+[project]
+name = "ai-consultant-agent-with-memory"
+version = "1.0.0"
+description = "A research-grounded AI consulting agent with Memori v3 long-term memory."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Tirth Rank" }]
+dependencies = [
+  "memori[sqlalchemy]>=3.3.6,<4",
+  "openai>=2.6,<3",
+  "python-dotenv>=1.1,<2",
+  "sqlalchemy>=2.0.44,<3",
+  "streamlit>=1.47,<2",
+  "tavily-python>=0.7,<1",
+]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.4,<10",
+  "ruff>=0.12,<1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = [".tmp"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]
